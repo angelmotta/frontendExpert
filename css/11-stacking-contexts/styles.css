@@ -1,0 +1,36 @@
+
+/* Section and Green are sibling stacking contexts */
+section {
+    position: fixed;
+    z-index: 4;
+}
+
+#red {
+    z-index: 1;
+    background-color: red;
+}
+
+#blue {
+    z-index: 2;
+    top: 100px;
+    left: 150px;
+    background-color: blue;
+}
+
+#green {
+    z-index: 3;
+    top: 200px;
+    left: 40px;
+    background-color: green;
+}
+
+div {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border: 5px solid black;
+    padding: 0.5rem;
+    color: white; /* text color for this element */
+    font-size: 2rem;
+    font-weight: bold;
+}

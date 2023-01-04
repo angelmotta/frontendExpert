@@ -1,0 +1,42 @@
+section {
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-around; /* cross axis */
+    gap: 10px;
+    height: 90vh;
+    border: 2px dotted black;
+}
+
+.red {
+    /* order: -1; */
+    /* flex-grow: 1; */
+    order: 0;
+    height: 75px;
+    background-color: red;
+} 
+
+.green {
+    /* flex-basis: 100vw;
+    flex-shrink: 1; */
+    flex: 1 0 200px;
+    height: 125px;
+    background-color: green;
+}
+
+.blue {
+    height: 100px;
+    background-color: blue;
+}
+
+div {
+    border: 5px solid black;
+    padding: 0.5rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    /* flex-grow: 1; */
+}

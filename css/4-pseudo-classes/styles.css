@@ -1,0 +1,23 @@
+p::first-letter {
+    font-size: 2rem;
+}
+
+p:first-of-type {
+    color: orange;
+}
+
+input:focus {
+    outline: 2px solid blue;
+}
+
+input:invalid:not(:focus) {
+    outline: 2px solid red;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: green;
+}

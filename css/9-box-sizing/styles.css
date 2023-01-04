@@ -1,0 +1,16 @@
+/* * {
+    box-sizing: border-box;
+} */
+
+#container {
+    width: 300px;
+    background-color: lightblue;
+}
+
+#child {
+    box-sizing: border-box;
+    width: 100%;
+    border: 10px solid black;
+    padding: 12px;
+    background-color: orange;
+}
