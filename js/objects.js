@@ -1,7 +1,18 @@
+// "use strict";
+
 const website = {
     name: 'AlgoExpert',
     rating: 5,
     founders: ['Clement', 'Antoine'],
+    [Symbol.toPrimitive](hint) {
+        if (hint === 'number') {
+            return 5;
+        } else if (hint === 'string') {
+            return 'hello'
+        }
+        // For unclear situations
+        return 2;
+    }
     // sayHello() {
     //     console.log('Hello!');
     // },
@@ -84,6 +95,47 @@ Object.keys(myobj).forEach(function(key) {
 
 // Iterating including inherited properties
 console.log(`-- Iterating including inherited properties --`);
-for (key in myobj) {
+for (let key in myobj) {
     console.log(key);
 }
+
+
+/** Copying Objects */
+const myNewObj = {
+    original: 123,
+}
+
+// copy all propierties to myNewObj (except inherited properties)
+Object.assign(myNewObj, myobj);
+console.log(myNewObj);
+
+/** Freeze Objects (is not allowed modify or add new properties to objects)*/
+// Object.freeze(website);
+// console.log(`isFrozen: ${Object.isFrozen(website)}`);
+// website.name = 'FrontendExpert'; // ignored or throw exception (in strict mode)
+// console.log(website);
+
+/** Seal Objects (is allowed modify existing properties but not add new ones) */
+// Object.seal(website);
+// console.log(`isSealed: ${Object.isSealed(website)}`)
+// website.name = 'FrontendExpert'; // modification allowed
+// console.log(website);
+// website.foo = 'bar'; // add is not allowed (ignored or error)
+
+
+/** Converting Objects to primitives */
+// console.log(website.toString());
+website.toString = function(){
+    return "Hello world";
+}
+// console.log(website.toString());
+
+// console.log(website.valueOf());
+website.valueOf = function() {
+    return 1;
+}
+// console.log(website - 1); // 'website' objects is evaluated to a number in presence of subtraction operator '-'
+
+console.log(10 - website);
+// In stric mode It considers the sum operation (not default case of data type)
+console.log(10 + website); // unclear situation (sum or concatenation)
