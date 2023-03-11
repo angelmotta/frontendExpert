@@ -1,3 +1,4 @@
+// Array and Functions are Objects
 // Something unique in JS everything that is not primitive is an Object (similar to Java?)
 
 // Function is an Object look this
