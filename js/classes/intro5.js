@@ -49,6 +49,7 @@ class MyPerson {
 }
 
 class Child extends MyPerson {
+    // Private field
     #age;
 
     constructor(name, age) {
