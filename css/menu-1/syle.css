@@ -11,6 +11,7 @@ nav {
 }
 
 nav .mobile {
+    display: none;
 }
 
 nav .logo {
@@ -33,5 +34,41 @@ nav .desktop {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
+    padding: 0 20px;
+}
+
+nav .desktop .primary,
+nav .desktop .secondary {
+    display: flex;
+}
+
+nav .desktop .secondary.mini {
+    display: none;
+}
+
+/* 892 px or less */
+@media screen and (max-width: 892px) {
+    nav .logo {
+        min-width: 100px; /* al menos este valor (no define el ancho) */
+    }
+
+    nav .secondary.full {
+        display: none;
+    }
+
+    nav .desktop .secondary.mini {
+        display: block;
+    }
+
+    nav .desktop .secondary.mini .submenu {
+        position: absolute;
+        display: none;
+        background-color: black;
+        right: 0;
+        width: 200px;
+    }
+
+    nav .desktop .secondary.mini:hover .submenu {
+        display: block;
+    }
 }
